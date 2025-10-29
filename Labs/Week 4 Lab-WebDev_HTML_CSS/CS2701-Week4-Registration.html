@@ -1,50 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>
-            Fresh Food For All
-        </title>
-        <link rel="stylesheet" href="CS2701-Week4-Registration.css">
-    </head>
-    <body>
-        <header></header>
-        <nav>
-            <!-- ToDo: An unordered list to represent the menu, 
-                       each list item should correspond to the menu items (Home, Register, Login, Help)
-                       The css class of the menu is "navlist"
-                       Check lecture slides about lists, an example of a more basic menu, and CSS class selector-->
-            <ul class="navlist">
-            </ul>
-         </nav>
-        <main>
-            <!-- Check Week 4 Lecture to learn about HTML5 semantic elements-->
-            <aside>
-            </aside>
-            <section>
-                <form class="center" novalidate>
-                <!-- ToDo: Implement the form containing 
-                           Name - type text
-                           email- type text
-                           password - type text
-                           Terms of Service - type checkbox
-                           Register - button
-                           Learn more - link
-                           Check lecture slides and the links on the slides to learn about forms
-                           and how to create a button that would react to a click Event
-                        -->
-                    <!-- Example given for user type checkboxes-->
-                    
-                    <input type="checkbox" id="buyer" name="buyer" value="buyer">
-                    <label for="buyer">I want to buy produce directly from allotment owners.</label><br>
-                    <input type="checkbox" id="seller" name="seller" value="seller">
-                    <label for="seller">I want to sell produce from my allotment.</label><br><br>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fresh Food Registration</title>
+  <link rel="stylesheet" href="CS2701-Week4-Registration.css">
+</head>
 
-                    <br><br>
-                </form>
-                <div class="center" id="hiddenSection">
-                    <p id="hiddenParagraph"></p>
-                </div>
-            </section>
-        </main>
-    </body>
+<body>
+  <!-- Banner image -->
+  <header></header>
+
+  <!-- Navigation menu (optional, you can leave or remove if not in your version) -->
+  <nav>
+    <ul class="navlist">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main page content -->
+  <main class="container">
+    <h1>Register Your Interest</h1>
+    <p>Please fill out the form below to connect with local allotment owners.</p>
+
+    <form action="#" method="post">
+      <!-- Buyer / Seller Options -->
+      <fieldset>
+        <legend>Choose your option</legend>
+        <label><input type="checkbox" name="buy"> I want to buy produce directly from allotment owners.</label><br>
+        <label><input type="checkbox" name="sell"> I want to sell produce from my allotment.</label>
+      </fieldset>
+
+      <!-- Contact Details -->
+      <fieldset>
+        <legend>Contact Details</legend>
+        <label for="name">Full name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone number:</label>
+        <input type="tel" id="phone" name="phone" required pattern="[0-9\s\-\+]{7,}">
+      </fieldset>
+
+      <!-- Message Box -->
+      <fieldset>
+        <legend>Message</legend>
+        <textarea name="message" rows="4" placeholder="Add any notes here..."></textarea>
+      </fieldset>
+
+      <!-- Submit Button -->
+      <input type="submit" value="Submit">
+    </form>
+  </main>
+</body>
 </html>
+

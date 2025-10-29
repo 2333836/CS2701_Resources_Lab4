@@ -1,26 +1,27 @@
-body{
+body {
     font-family: "Lato", sans-serif;
     max-width: 75rem;
     margin: auto;
     height: 100vh;
 }
 
-header{
-    background-image:url(SharingFood.jpg);
-    background-repeat: repeat;
-    background-size: contain;
+/* --- Banner --- */
+header {
+    background-image: url(SharingFood.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     background-position: center;
-    height:200px;
+    height: 220px;
     width: 100%;
-    margin: auto;
+    margin: 0 auto;
 }
 
-/**** Menu Style *****************************************/
+
 nav {
     border-bottom: 1px solid black;
 }
 
-ul.navlist{
+ul.navlist {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -28,8 +29,7 @@ ul.navlist{
     background-color: #333;
 }
 
-ul.navlist li
-{
+ul.navlist li {
     float: left;
     display: inline;
 }
@@ -46,68 +46,134 @@ ul.navlist li a:hover {
     background-color: #111;
 }
 
-/**** Styling for main part */
+
 
 main {
-    border-bottom: 0.5rem solid;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 0;
     box-sizing: border-box;
-    /*ToDo: Make this a flexible container; 
-    You can find the following helpful: display, flex-wrap, width, min-height, height
-    See lecture slides*/
+    border-bottom: 0.5rem solid #2d6a4f;
 }
 
-section, aside {
-    padding: 0.5rem;
-    box-sizing: border-box;
-    min-height: 100%;
-}
 
 aside {
-    /*ToDo: Set width.ToDo: For fluid layouts, use min-width, max-width, and set to relative 
-   values, like 25% of the page.*/ 
     background-color: #deded8;
+    flex: 1 1 25%;
+    min-width: 220px;
+    padding: 0.5rem;
+    box-sizing: border-box;
+
 }
+
+
 
 section {
-    /*ToDo: Set width. For fluid layouts, use min-width, max-width, and set to relative 
-   values, like 75% of the page.*/
+    flex: 1 1 70%;
+    min-width: 320px;
+    padding: 0.5rem;
+    box-sizing: border-box;
 }
 
-/*Styling for search in aside*/
-.search{
-    display: block;
-    width: auto;
-    text-align: left;
-}
 
 .center {
-    /*ToDo: Styling for centered elements
-    You can use margin, width useful to center.
-    */
-    border: 3px solid green;
+    max-width: 900px;
+    margin: 0 auto;
+    border: 2px solid #2d6a4f;
+    border-radius: 6px;
     padding: 10px;
+    background: #fff;
+}
+
+
+.textInput input,
+.textInput select,
+.textInput textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    margin: 6px 0 12px;
+}
+
+
+fieldset {
+    border: 2px solid #2d6a4f;
+    border-radius: 6px;
+    margin: 16px 0;
+    padding: 12px 14px;
+}
+
+legend {
+    font-weight: 600;
+    color: #1b4332;
+    padding: 0 6px;
+}
+
+
+button[type="submit"],
+input[type="submit"] {
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 8px;
+    background: #2d6a4f;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+    filter: brightness(1.05);
+}
+
+
+@media screen and (max-width: 700px) {
+    aside,
+    section {
+        flex: 1 1 100%;
+        min-width: 100%;
+    }
+
+    header {
+        height: 180px;
+    }
+
+    #hiddenSection {
+        overflow-wrap: break-word;
+  
   }
 
-/* Styling for text inputs in the form*/
-.textInput {
-    display: block;
-    width: auto;
-    text-align: left;
+nav:empty { border-bottom: 0; }
+
+
+main {
+  border-bottom: 0;          
+  padding: 0 16px 24px;
 }
 
-/*Styling with a media query*/
-@media screen and (max-width: 700px) {
-    /* ToDo: Style aside and section so that they take 100% width on small screens*/
-    aside {
-    
-    }
-    
-    section {
- 
-    }
 
-    #hiddenSection{
-        overflow-wrap: break-word;
-    }
+.container {                 
+  max-width: 900px;
+  margin: 16px auto;
+}
+
+
+fieldset {
+  border: 2px solid #2d6a4f;
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 12px 0 16px;
+}
+
+
+fieldset:empty { display: none; }
+
+
+.checkbox-list { list-style: none; margin: 4px 0 0; padding: 0; }
+.checkbox-list li { display: flex; align-items: center; gap: 8px; }
 
 }
+
